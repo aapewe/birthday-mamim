@@ -1,125 +1,135 @@
-/* --- Pengaturan Dasar & Animasi Background --- */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%; /* Menggunakan min-height agar bisa memanjang */
-    overflow-x: hidden;
-    overflow-y: auto; /* Mengizinkan scroll vertikal */
-    font-family: 'Arial', sans-serif;
-    background-color: #ffd1dc; 
-    background-image: radial-gradient(#ffb7c5 1px, transparent 1px);
-    background-size: 30px 30px;
-    color: #17376D;
+    /* --- Pengaturan Dasar & Animasi Background --- */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%; /* Menggunakan min-height agar bisa memanjang */
+        overflow-x: hidden;
+        overflow-y: auto; /* Mengizinkan scroll vertikal */
+        font-family: 'Arial', sans-serif;
+        background-color: #ffd1dc; 
+        background-image: radial-gradient(#ffb7c5 1px, transparent 1px);
+        background-size: 30px 30px;
+        color: #17376D;
+    
+    background-image: url('assets/background.jpg'); /* Pastikan file ada di folder assets */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* Overlay transparan agar teks tetap terbaca */
+    background-color: rgba(255, 209, 220, 0.7);
+    background-blend-mode: overlay;
 }
 
-/* Mengatur posisi agar tidak terpusat secara paksa di tengah yang mengunci layar */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
+    /* Mengatur posisi agar tidak terpusat secara paksa di tengah yang mengunci layar */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 
-.love {
-    position: fixed; 
-    bottom: -50px;
-    color: #ff6f91;
-    font-size: 20px;
-    z-index: 9999; 
-    pointer-events: none;
-    animation: floatLove 6s linear forwards;
-    opacity: 0.6;
-}
+    .love {
+        position: fixed; 
+        bottom: -50px;
+        color: #ff6f91;
+        font-size: 20px;
+        z-index: 9999; 
+        pointer-events: none;
+        animation: floatLove 6s linear forwards;
+        opacity: 0.6;
+    }
 
-@keyframes floatLove {
-    0% { transform: translateY(0) scale(0.5); opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
-}
+    @keyframes floatLove {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+    }
 
-/* --- Container & Komponen --- */
-.card-container {
-    width: 90%;
-    max-width: 380px;
-    padding: 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 30px;
-    backdrop-filter: blur(5px);
-    margin: 0 auto; 
-    box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
-}
+    /* --- Container & Komponen --- */
+    .card-container {
+        width: 90%;
+        max-width: 380px;
+        padding: 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        margin: 0 auto; 
+        box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
+    }
 
-.page {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
+    .page {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-.page.active {
-    display: flex;
-}
+    .page.active {
+        display: flex;
+    }
 
-.img-polaroid {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-    object-fit: cover;
-}
+    .img-polaroid {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        margin-bottom: 25px;
+        object-fit: cover;
+    }
 
-.page img:not(.img-polaroid) {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-}
+    .page img:not(.img-polaroid) {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+    }
 
-h1 { font-size: 1.4rem; font-weight: bold; margin-bottom: 30px; }
-h2 { font-size: 1.2rem; line-height: 1.4; margin-bottom: 20px; }
-.text-angry { color: #e63946; }
+    h1 { font-size: 1.4rem; font-weight: bold; margin-bottom: 30px; }
+    h2 { font-size: 1.2rem; line-height: 1.4; margin-bottom: 20px; }
+    .text-angry { color: #e63946; }
 
-.btn-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .btn-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
-button:not(.keypad button) {
-    background-color: #17376D;
-    color: white;
-    border: none;
-    padding: 12px 35px;
-    font-size: 1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(23, 55, 109, 0.2);
-    touch-action: manipulation; 
-}
+    button:not(.keypad button) {
+        background-color: #17376D;
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        font-size: 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(23, 55, 109, 0.2);
+        touch-action: manipulation; 
+    }
 
-.btn-row button:last-child {
-    background-color: white;
-    color: #17376D;
-    border: 2px solid #17376D;
-    box-shadow: none;
-}
+    .btn-row button:last-child {
+        background-color: white;
+        color: #17376D;
+        border: 2px solid #17376D;
+        box-shadow: none;
+    }
 
-.pin-dots { display: flex; gap: 12px; margin: 20px 0 30px 0; justify-content: center; }
-.dot { width: 12px; height: 12px; border: 2px solid #17376D; border-radius: 50%; }
-.dot.filled { background-color: #17376D; }
+    .pin-dots { display: flex; gap: 12px; margin: 20px 0 30px 0; justify-content: center; }
+    .dot { width: 12px; height: 12px; border: 2px solid #17376D; border-radius: 50%; }
+    .dot.filled { background-color: #17376D; }
 
-.keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 280px; }
-.keypad button { background-color: white; color: #17376D; border: none; height: 65px; border-radius: 15px; font-size: 1.5rem; font-weight: bold; cursor: pointer; }
-.keypad .btn-delete { background-color: transparent; }
+    .keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 280px; }
+    .keypad button { background-color: white; color: #17376D; border: none; height: 65px; border-radius: 15px; font-size: 1.5rem; font-weight: bold; cursor: pointer; }
+    .keypad .btn-delete { background-color: transparent; }
 
-.clue { margin-top: 30px; font-size: 0.9rem; color: #8c99b1; }
+    .clue { margin-top: 30px; font-size: 0.9rem; color: #8c99b1; }
 
-.music-btn {
-    position: fixed; top: 25px; right: 25px; width: 45px; height: 45px;
-    border-radius: 50%; background: white; color: #17376D; border: 2px solid #17376D;
-    cursor: pointer; z-index: 100;
-}
+    .music-btn {
+        position: fixed; top: 25px; right: 25px; width: 45px; height: 45px;
+        border-radius: 50%; background: white; color: #17376D; border: 2px solid #17376D;
+        cursor: pointer; z-index: 100;
+    }
 
-.letter { background: #fff; border: 2px dashed #17376D; padding: 25px; border-radius: 20px; }
+    .letter { background: #fff; border: 2px dashed #17376D; padding: 25px; border-radius: 20px; }
