@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵 </button>
+
+    <div class="card-container">
+        
+        <div class="page active" id="page1">
+            <img src="assets/foto1.jpg" alt="Foto Cantik" class="img-polaroid">
+            <h1>hi, pretty 🫶🏻👋🏻</h1>
+            <button onclick="nextPage(2)">tap disinii &lt;3</button>
+        </div>
+
+        <div class="page" id="page2">
+            <img src="assets/cat2.gif" alt="Cat Ready">
+            <h1>are you readyy to open thisss?</h1>
+            <div class="btn-row">
+                <button onclick="nextPage(4)">yess</button>
+                <button onclick="nextPage(3)">noo</button>
+            </div>
+        </div>
+
+        <div class="page" id="page3">
+            <img src="assets/cat3.gif" alt="Cat Angry">
+            <h1 class="text-angry">OH GITU SEKARANG KAMU SAMA AKU? 😡</h1>
+            <button onclick="nextPage(2)">back</button>
+        </div>
+
+        <div class="page" id="page4">
+            <img src="assets/cat4.gif" alt="Cat HBD">
+            <h1>Today, this pretty girl turns 21!<br>happy birthday, my love 🤍</h1>
+            <button onclick="nextPage(5)">open it &lt;3</button>
+        </div>
+
+        <div class="page" id="page5">
+            <img src="assets/foto8.jpg" alt="Foto Kenangan 1" class="img-polaroid">
+            <h1>This was our first picture, a moment I'll always remember</h1>
+            <button onclick="nextPage(6)">klik ini &lt;3</button>
+        </div>
+
+        <div class="page" id="page6">
+            <img src="assets/foto2.jpg" alt="Foto Kenangan 2" class="img-polaroid">
+            <h1>I'm so grateful for every moment we've shared since then</h1>
+            <button onclick="nextPage(7)">klik ini &lt;3</button>
+        </div>
+
+        <div class="page" id="page7">
+            <img src="assets/foto3.jpg" alt="Foto Kenangan 3" class="img-polaroid">
+            <h1>May we grow together</h1>
+            <button onclick="nextPage(8)">klik ini &lt;3</button>
+        </div>
+
+        <div class="page" id="page8">
+            <img src="assets/cat5.gif" alt="Cat Love">
+            <h1>Happy birthday to my most beautiful, loving, and caring girlfriend 🤍</h1>
+            <p>I love youu so muchh!!!!</p>
+            <button onclick="nextPage(9)">i have something for you 💌</button>
+        </div>
+
+        <div class="page" id="page9">
+            <img src="assets/cat6.gif" alt="Cat Read">
+            <h1>okayy last one, i made something for your birthday, read it slowly okayyy</h1>
+            <button onclick="nextPage(10)">&lt;3</button>
+        </div>
+
+        <div class="page" id="page10">
+            <img src="assets/cat1.gif" alt="Cat Input" style="width: 100px;">
+            <h2>Hi love, ayo tebak passwordnya, I bet u know!!</h2>
+            
+            <div class="pin-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="keypad">
+                <button onclick="pressKey('1')">1</button>
+                <button onclick="pressKey('2')">2</button>
+                <button onclick="pressKey('3')">3</button>
+                <button onclick="pressKey('4')">4</button>
+                <button onclick="pressKey('5')">5</button>
+                <button onclick="pressKey('6')">6</button>
+                <button onclick="pressKey('7')">7</button>
+                <button onclick="pressKey('8')">8</button>
+                <button onclick="pressKey('9')">9</button>
+                <div></div>
+                <button onclick="pressKey('0')">0</button>
+                <button onclick="pressDelete()" class="btn-delete">⌫</button>
+            </div>
+            <div class="clue">clue : your birthday</div>
+        </div>
+
+        <div class="page" id="page11">
+            <div class="letter">
+                <h1>Happy birthday to my favorite person ❤️</h1>
+                <p>
+                    Terima kasih udah hadir dan jadi alasan banyak bahagia di hidup aku.
+                    Semoga semua hal baik selalu datang ke kamu, langkahmu dipenuhi kebahagiaan, dan semua mimpi kamu bisa tercapai.
+                    No matter what happens, I’ll always be here for u.
+                    U mean so much to me, more than words could ever explain.
+                    
+                    i lovee u moreee ♥️
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

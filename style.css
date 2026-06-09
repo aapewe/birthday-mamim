@@ -1,0 +1,113 @@
+/* --- Pengaturan Dasar & Animasi Background --- */
+body {
+    font-family: 'Arial', sans-serif;
+    /* Background Pink Lembut dengan pattern titik halus */
+    background-color: #ffd1dc; 
+    background-image: radial-gradient(#ffb7c5 1px, transparent 1px);
+    background-size: 30px 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #17376D;
+    overflow: hidden; /* Mencegah scroll saat animasi love muncul */
+}
+
+.love {
+    position: fixed; 
+    bottom: -50px; /* Mulai dari bawah layar */
+    color: #ff6f91;
+    font-size: 20px;
+    z-index: 9999; 
+    pointer-events: none; /* Agar tidak menghalangi klik tombol */
+    animation: floatLove 6s linear forwards; /* Menggunakan forwards agar halus */
+    opacity: 0.6;
+}
+
+@keyframes floatLove {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* --- Container & Komponen --- */
+.card-container {
+    width: 90%;
+    max-width: 380px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7); /* Efek kaca transparan */
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+.img-polaroid {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.page img:not(.img-polaroid) {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 1.4rem; font-weight: bold; margin-bottom: 30px; }
+h2 { font-size: 1.2rem; line-height: 1.4; margin-bottom: 20px; }
+.text-angry { color: #e63946; }
+
+.btn-row { display: flex; gap: 15px; }
+
+button:not(.keypad button) {
+    background-color: #17376D;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(23, 55, 109, 0.2);
+}
+
+.btn-row button:last-child {
+    background-color: white;
+    color: #17376D;
+    border: 2px solid #17376D;
+    box-shadow: none;
+}
+
+.pin-dots { display: flex; gap: 12px; margin: 20px 0 30px 0; }
+.dot { width: 12px; height: 12px; border: 2px solid #17376D; border-radius: 50%; }
+.dot.filled { background-color: #17376D; }
+
+.keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 280px; }
+.keypad button { background-color: white; color: #17376D; border: none; height: 65px; border-radius: 15px; font-size: 1.5rem; font-weight: bold; cursor: pointer; }
+.keypad .btn-delete { background-color: transparent; }
+
+.clue { margin-top: 30px; font-size: 0.9rem; color: #8c99b1; }
+
+.music-btn {
+    position: fixed; top: 25px; right: 25px; width: 45px; height: 45px;
+    border-radius: 50%; background: white; color: #17376D; border: 2px solid #17376D;
+    cursor: pointer; z-index: 100;
+}
+
+.letter { background: #fff; border: 2px dashed #17376D; padding: 25px; border-radius: 20px; }
