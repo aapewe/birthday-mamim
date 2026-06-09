@@ -1,27 +1,35 @@
 /* --- Pengaturan Dasar & Animasi Background --- */
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%; /* Menggunakan min-height agar bisa memanjang */
+    overflow-x: hidden;
+    overflow-y: auto; /* Mengizinkan scroll vertikal */
     font-family: 'Arial', sans-serif;
-    /* Background Pink Lembut dengan pattern titik halus */
     background-color: #ffd1dc; 
     background-image: radial-gradient(#ffb7c5 1px, transparent 1px);
     background-size: 30px 30px;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     color: #17376D;
-    overflow: hidden; /* Mencegah scroll saat animasi love muncul */
+}
+
+/* Mengatur posisi agar tidak terpusat secara paksa di tengah (yang menyebabkan tidak bisa di-scroll) */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .love {
     position: fixed; 
-    bottom: -50px; /* Mulai dari bawah layar */
+    bottom: -50px;
     color: #ff6f91;
     font-size: 20px;
     z-index: 9999; 
-    pointer-events: none; /* Agar tidak menghalangi klik tombol */
-    animation: floatLove 6s linear forwards; /* Menggunakan forwards agar halus */
+    pointer-events: none;
+    animation: floatLove 6s linear forwards;
     opacity: 0.6;
 }
 
@@ -38,15 +46,17 @@ body {
     max-width: 380px;
     padding: 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.7); /* Efek kaca transparan */
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 30px;
     backdrop-filter: blur(5px);
+    margin: 0 auto; /* Tengah secara horizontal */
 }
 
 .page {
     display: none;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .page.active {
@@ -73,7 +83,7 @@ h1 { font-size: 1.4rem; font-weight: bold; margin-bottom: 30px; }
 h2 { font-size: 1.2rem; line-height: 1.4; margin-bottom: 20px; }
 .text-angry { color: #e63946; }
 
-.btn-row { display: flex; gap: 15px; }
+.btn-row { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
 button:not(.keypad button) {
     background-color: #17376D;
@@ -85,6 +95,7 @@ button:not(.keypad button) {
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(23, 55, 109, 0.2);
+    touch-action: manipulation; /* Agar respon tap lebih cepat di HP */
 }
 
 .btn-row button:last-child {
@@ -94,7 +105,7 @@ button:not(.keypad button) {
     box-shadow: none;
 }
 
-.pin-dots { display: flex; gap: 12px; margin: 20px 0 30px 0; }
+.pin-dots { display: flex; gap: 12px; margin: 20px 0 30px 0; justify-content: center; }
 .dot { width: 12px; height: 12px; border: 2px solid #17376D; border-radius: 50%; }
 .dot.filled { background-color: #17376D; }
 
