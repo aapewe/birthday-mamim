@@ -13,7 +13,7 @@ html, body {
     color: #17376D;
 }
 
-/* Mengatur posisi agar tidak terpusat secara paksa di tengah (yang menyebabkan tidak bisa di-scroll) */
+/* Mengatur posisi agar tidak terpusat secara paksa di tengah yang mengunci layar */
 body {
     display: flex;
     flex-direction: column;
@@ -49,7 +49,8 @@ body {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 30px;
     backdrop-filter: blur(5px);
-    margin: 0 auto; /* Tengah secara horizontal */
+    margin: 0 auto; 
+    box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
 }
 
 .page {
@@ -95,7 +96,7 @@ button:not(.keypad button) {
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(23, 55, 109, 0.2);
-    touch-action: manipulation; /* Agar respon tap lebih cepat di HP */
+    touch-action: manipulation; 
 }
 
 .btn-row button:last-child {
